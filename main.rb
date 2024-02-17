@@ -13,6 +13,7 @@ loop do
             puts"\nCadastrar usuários Digite 1"
             puts"Editar um usuário Digite 2"
             puts"Mostrar Usuários Digite 3"
+            puts"Remover um Usuário Digite 4"
             puts"Sair Digite 0"
             puts""
             print"Selecione uma opção: "
@@ -47,6 +48,15 @@ loop do
                 puts usr
                 end
                 programa()
+            elsif op == 4
+                puts""
+                print"Digite a posição de um a zero do usuário que você deseja deletar: "
+                postposi = gets.chomp.to_i
+                $usuarios.delete_at(postposi)
+                puts'<--USUÁRIOS-->'
+                $usuarios.each do | usr |
+                puts usr
+                end
             end
             break if op == 0
         end
